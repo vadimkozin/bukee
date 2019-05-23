@@ -1,0 +1,89 @@
+$width-content:	1170px;
+$max-width: 1300px;
+
+body {
+	font-family: 'Roboto Slab', serif;
+	//font-family: 'Open Sans', sans-serif;
+	width: 100vw;
+	border: 4px solid blue;
+}
+
+.page-main {
+	background-image: url(../../img/bg-main.png);
+	background-repeat: no-repeat;
+	background-size: cover;		// чтобы растягивался по содержимому
+
+	max-width: $max-width;
+	min-height: 1060px;
+	margin: 0 auto;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	max-width: $width-content;
+	border: 1px solid red;
+	margin: 0 auto;
+	
+	&__logo {
+		display: block;
+		width: 137px;
+		height: 28px;
+		background-image: url(../../img/logo.svg);
+	}
+	&-list {
+		list-style-type: none;
+		display: flex;
+		justify-content: flex-end;
+		
+		&__item {
+			margin-left: 15px;
+		}
+	}
+}
+.wrap {
+	max-width: $width-content;
+	display: block;
+	margin: 0 auto;
+	border: 2px solid green;
+}
+.block-book {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 180px;
+	
+	.block-img, .block-text {
+		flex-basis: 50%;
+		align-self: center;
+	}
+	.block-img {
+		background-image: url(../../img/book.svg);
+		width: 446px;
+		height: 640px;
+		clip-path: polygon(0% 0%, 74% 0%, 74% 100%, 0% 100%);
+	}
+	
+}
+
+// ---------------------------------------------------------
+h1, h2, h3, h4, h5, h6, ul {
+	padding: 0;
+	margin: 0;
+}
+
+.container-- {
+	@include container();
+	@include sm(max-width, 510px);
+	@include md(max-width, 690px);
+	@include lg(max-width, 930px);
+	@include xl(max-width, 1110px);
+}
+
+.img-responsive-- {
+	max-width: 500px;
+	width: 100%;
+	height: auto;
+}
