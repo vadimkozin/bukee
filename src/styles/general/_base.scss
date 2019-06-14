@@ -1,6 +1,3 @@
-$slick-dot-size: 10px;
-$slick-dot-color: red;
-
 $light-color: #fff;
 $accent-color: #65e496;
 $bg-list-color: #5fc9b8;
@@ -24,8 +21,7 @@ $gray-color: #9191b5;
 	box-shadow: 0 -2px $color inset;
 }
 @mixin btn-gradient($first:#65e49c, $second:#65e4b0) {
-	//background: linear-gradient(to bottom right, #65e49c, #65e4b0);
-	background: linear-gradient(to bottom right, $first,$second);
+	background: linear-gradient(to bottom right, $first, $second);
 }
 @mixin set-font($fz, $va, $lh:inherit, $ff:'Roboto Slab', $fw:400) {
 	font-size: $fz;
@@ -34,26 +30,6 @@ $gray-color: #9191b5;
 	font-family: $ff;
 	font-weight: $fw;
 }
-// ---------------------------------------------------------
-/*
-h1, h2, h3, h4, h5, h6, ul {
-	padding: 0;
-	margin: 0;
-}
-.container-- {
-	@include container();
-	@include sm(max-width, 510px);
-	@include md(max-width, 690px);
-	@include lg(max-width, 930px);
-	@include xl(max-width, 1110px);
-}
-
-.img-responsive-- {
-	max-width: 500px;
-	width: 100%;
-	height: auto;
-}
-*/
 
 h1, h2, h3, h4, p, ul {
 	padding: 0;
@@ -62,8 +38,6 @@ h1, h2, h3, h4, p, ul {
 
 body {
 	font-family: 'Roboto Slab', serif;
-	//font-family: 'Open Sans', sans-serif;
-
 }
 
 .wrap {
@@ -73,6 +47,7 @@ body {
 	padding-right: 15px;
 }
 
+// Main (1)
 .page-main {
 	background-image: url(../../img/bg-main.png);
 	background-repeat: no-repeat;
@@ -93,7 +68,6 @@ body {
 		&__logo {
 			margin-bottom: 25px;
 		}
-
 	}
 	&__logo {
 		display: block;
@@ -115,21 +89,19 @@ body {
 			&:hover {
 				border-bottom: 3px solid $accent-color;
 			}
-
 		}
 		&__item.active {
 			border-bottom: 3px solid $accent-color;
-
 		}
 		&__link {
 			color: $light-color;
 			text-decoration: none;
 			letter-spacing: 0.8px;
 		}
-
 	} 
 }
 
+// (GOOD BOOK) in main(1)
 .block-text {
 	flex-basis: calc(93% - 500px);
 	&--width {
@@ -137,9 +109,7 @@ body {
 		margin-top: -17px;
 	}
 	&__name {
-		font-family: 'Open Sans', serif;
-		font-size: 18px;
-		letter-spacing: calc(18px*50 / 1000);
+		@include set-font($fz:18px, $va:50, $ff:'Open Sans');
 		margin-bottom: 30px;
 	}
 	&__name_top {
@@ -148,31 +118,25 @@ body {
 		margin-bottom: 19px;
 		letter-spacing: calc(18px*40 / 1000);
 	}
-
 	&__title {
-			font-size: 48px;
-			font-weight: 700;
-			letter-spacing: 1.8px;
+			@include set-font($fz:48px, $va:40, $lh:44px, $fw:700);
 			margin-bottom: 40px;
 			span {
+				@include set-font($fz:18px, $va:50, $lh:44px);
 				display: block;
 				color: $accent-color;
-				font-size: 18px;
 				margin-top: 9px;
-				letter-spacing: 0.9px;
 			}
 	}
 
 	&__description {
-		font-family: 'Open Sans', serif;
-		font-size: 15px;
-		line-height: 24px;
 		margin-bottom: 24px;
-		letter-spacing: 0.75px;
+		@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');
 	}
 
 	&__btn {
 		display: block;
+		@include set-font($fz:18px, $va:40);
 		@include btn-gradient();
 		@include box-shadow(#58b988);
 		color: $light-color;
@@ -180,34 +144,30 @@ body {
 		max-width: 250px;
 		border-radius: 3px;
 		text-align: center;
-		font-size: 18px;
 		margin-top: 48px;
 		margin-bottom: 19px;
-		padding: 14px 0;
-		letter-spacing: calc(18px*40 / 1000);
-	
+		padding: 14px 0;	
 	}
 	small {
-		font-family: 'Open Sans';
+		@include set-font($fz:12px, $va:50, $lh:22px, $ff:'Open Sans');
 		font-style: italic;
-		font-style: 12px;
 	}
 	&-item {
 		margin-bottom: 55px;
 		&__date {
-			@include  set-font($fz:15px, $va:50, $lh:44px, $ff:'Open Sans');
+			@include set-font($fz:15px, $va:50, $lh:44px, $ff:'Open Sans');
 			margin-bottom: 4px;
 		}
 		&__title {
-			@include  set-font($fz:18px, $va:50, $lh:44px);
+			@include set-font($fz:18px, $va:50, $lh:44px);
 			margin-bottom: 16px;
 		}
 		&__desc {
-			@include  set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');
+			@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');
 		}
 		&__btn {
 			display: block;
-			@include  set-font($fz:18px, $va:40);	//set-font($fz, $va, $lh, $ff:'Roboto Slab')
+			@include set-font($fz:18px, $va:40);	//set-font($fz, $va, $lh, $ff:'Roboto Slab')
 			@include btn-gradient();
 			@include box-shadow(#58b988);
 			color: $light-color;
@@ -217,7 +177,6 @@ body {
 			text-align: center;
 			margin-top: 28px;
 			padding: 14px 0;
-	
 		}
 	}
 }
@@ -235,40 +194,32 @@ body {
 		position: relative;
 
 		h2 {
-			font-size: 36px;
-			font-weight: 700;
+			@include set-font($fz:36px, $va:40, $fw:700);
 			text-transform: uppercase;
-			letter-spacing: calc(36px*40 / 1000);
 			position: absolute;
 			left: 130px;
 			top: 110px;
 			
 			span {
+				@include set-font($fz:14px, $va:50, $lh:24px, $ff:'Open Sans');
 				display: block;
-				font-family: 'Open Sans';
-				font-size: 14px;
-				letter-spacing: calc(14px*50 / 1000);
-				line-height: 24px;
 				text-transform: none;
 				color: $accent-color;
 			}
 
 		}
 		p {
+			@include set-font($fz:14px, $va:50, $lh:24px, $ff:'Open Sans');
 			display: block;
 			position: absolute;
 			bottom: 55px;
 			left: 84px;
-			font-family: 'Open Sans';
-			font-size: 14px;
 			color: $accent-color;
-			letter-spacing: calc(14px*50 / 1000);
-			line-height: 24px;
 		}
-		
 	}
 }
 
+// any page
 .page {
 	padding-top: 161px;
 	padding-bottom: 157px;
@@ -296,13 +247,9 @@ body {
 			background-color: $bg-dark-color;
 		}
 	}
-
-	//&_dark {
-	//	background-color: $bg-dark-color;
-	//}
-
 }
 
+// Emma Anderson (2)
 .block-author {
 	display: flex;
 	justify-content: space-between;
@@ -343,44 +290,20 @@ body {
 	}
 
 	p {
+		@include set-font($fz:18px, $va:40, $lh:44px, $ff:'Open Sans');
 		display: block;
-		font-family: 'Open Sans'; 
-		font-size: 18px;
-		letter-spacing: calc(18px*40 / 1000);
 		text-align: center;
-		
+
 		span {
+			@include set-font($fz:80px, $va:40, $lh:44px, $fw:100);
 			display: block;
-			font-family: "Roboto Slab";
-			font-size: 80px;
-			font-weight: 100;
-			letter-spacing: calc(80px*40 / 1000);
-			line-height: 107px;
 			color: $accent-color;
-			
-			
+			margin-bottom: 32px;
 		}
 	}
 }
 
-.block-title {
-	text-align: center;
-	h2 {
-		font-size: 48px;
-		font-weight: 700;
-		letter-spacing: calc(48px*40 / 1000);
-		margin-top: 81px;
-	}
-	span {
-		display: block;
-		font-size: 18px;
-		font-weight: 400;
-		letter-spacing: calc(18px*50 / 1000);
-		color: $accent-color;
-		line-height: 43px;
-	}
-}
-
+// Book Contents (3)
 .block-content {
 	display: flex;
 	justify-content: space-between;
@@ -522,6 +445,7 @@ body {
 	}
 }
 
+// Other Books (4)
 .block-books {
 	margin-top: 75px;
 	.book-list {
@@ -536,20 +460,14 @@ body {
 			position: relative;
 		}
 		&__title {
+			@include set-font($fz:24px, $va:40, $fw:700);	//set-font($fz, $va, $lh:inherit, $ff:'Roboto Slab', $fw:400)
 			text-transform: uppercase;
-			//font-family: 'Roboto Slab';
-			font-weight: 700;
-			font-size: 24px;
 			text-align: center;
 			color: $light-color;
-			letter-spacing: calc(24px*40 / 1000);
 			margin-top: 72px;
 		}
 		&__subtitle, &__author {
-			font-size: 12px;
-			font-family: 'Open Sans';
-			letter-spacing: calc(12px*50 / 1000);
-			line-height: 24px;
+			@include set-font($fz:12px, $va:50, $lh:24px, $ff:'Open Sans');
 			text-align: center;
 			color: $accent-color;
 		}
@@ -571,32 +489,21 @@ body {
 		&__item {
 			width: 316px;
 			.about {
-			
 				text-align: center;
 				&__title {
-					font-size: 24px;
-					line-height: 24px;
-					letter-spacing: calc(24px*50 / 1000);
+					@include set-font($fz:24px, $va:50, $lh:24px, $fw:700);
 					margin-top: 35px;
 				}
 				&__text {
-					font-size: 15px;
-					line-height: 24px;
-					letter-spacing: calc(15px*50 / 1000);
-					font-family: 'Open Sans';
+					@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');
 					margin-top: 21px;
 				}
 				&__btn {
+					@include set-font($fz:15px, $va:50, $lh:24px, $fw:700, $ff:'Open Sans');
 					display: block;
 					color: $accent-color;
 					text-decoration: none;
-					font-size: 15px;
-					line-height: 24px;
-					letter-spacing: calc(15px*50 / 1000);
-					font-family: 'Open Sans';
-					font-weight: 700;
-					margin-top: 13px;
-					
+					margin-top: 28px;					
 				}
 			}
 		}
@@ -606,7 +513,7 @@ body {
 	&__btn  {
 		@include btn-gradient();
 		@include box-shadow(#58b988);
-		@include set-font($fz:18px, $va:40);	//set-font($fz, $va, $lh:inheretic, $ff:'Roboto Slab')
+		@include set-font($fz:18px, $va:40);
 		border: none;
 		color: $light-color;
 		text-decoration: none;
@@ -619,7 +526,105 @@ body {
 	}
 }
 
-// Latest from Blog
+// Slider (5)
+.block-carousel {
+	text-align: center;
+	h3 {
+		color: $accent-color;
+		@include set-font($fz:24px, $va:50, $lh:28px, $fw:700);	//set-font($fz, $va, $lh:inheretic, $ff:'Roboto Slab')
+		margin-top: 28px;
+
+	}
+	&__expert, &__desc {
+		color: $gray-color;
+		@include set-font($fz:15px, $va:50, $lh:28px, $ff:'Open Sans');	//set-font($fz, $va, $lh:inheretic, $ff:'Roboto Slab')
+
+	}
+	&__expert {
+		margin-bottom: 33px;
+	}
+
+	&__desc {
+		max-width: 760px;
+		margin: 0 auto;
+	}
+
+	&-ava {
+		position: relative;
+		width: 150px;
+		height: 150px;
+		display: block;
+		margin: 0 auto 27px;
+
+	}
+	&-bq {
+		position: absolute;
+		display: block;
+		background-image: url(../../img/bq.png);
+		background-repeat: no-repeat;
+		width: 48px;
+		height: 42px;
+		top: 0;
+		right: -16px;
+	}
+
+	&-thumb {
+		display: block;
+		margin: 0 auto ;
+		position: relative;
+		overflow: hidden;
+		width: 150px;
+		height: 150px;
+		border-radius: 100%;
+		img {
+			width: 150px;
+			height: 150px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			object-fit: cover;
+		}
+
+	}
+}
+.slick-dots {
+	margin-top: 37px;
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	&>li {
+		margin: 0 9px;
+		&>button {
+			text-indent: -9999px;
+			padding: 0;
+			line-height: 0;
+			font-size: 0;
+			cursor: pointer;
+			width: 8px;
+			height: 8px;
+			border: none;
+			background-color: $accent-color;
+			border-radius: 100%;
+			&:focus{
+				outline: none;
+			}
+	
+		}
+	}
+	&>li.slick-active {
+		&>button {
+			width: 37px;
+			border-radius: 4px;
+		}
+
+	}
+}
+
+// Upcoming Events (6)
+// --> .block-author + .block-ava
+
+// Latest from Blog (7)
 .block-blog {
 	display: flex;
 	justify-content: space-between;
@@ -677,7 +682,7 @@ body {
 	}
 }
 
-//Join Newsletter
+// Join Newsletter (8)
 .block-letter {
 	display: flex;
 	justify-content: space-between;
@@ -730,13 +735,11 @@ body {
 	}
 }
 
-//Footer
+// Footer (9)
 .footer {
 	background-color:$bg-dark-color;
 	color: $gray-color;
-	//color: yellow;
 	padding-top: 155px;
-
 }
 
 .block-footer {
@@ -804,6 +807,27 @@ body {
 
 }
 
+
+// Title in any pages
+.block-title {
+	text-align: center;
+	h2 {
+		font-size: 48px;
+		font-weight: 700;
+		letter-spacing: calc(48px*40 / 1000);
+		margin-top: 81px;
+	}
+	span {
+		display: block;
+		font-size: 18px;
+		font-weight: 400;
+		letter-spacing: calc(18px*50 / 1000);
+		color: $accent-color;
+		line-height: 43px;
+	}
+}
+
+////////////////////////
 /*
 // Slider
 .block-carousel {
@@ -850,98 +874,3 @@ body {
 	}
 }
 */
-
-.block-carousel {
-	text-align: center;
-	h3 {
-		color: $accent-color;
-		@include set-font($fz:24px, $va:50, $lh:28px, $fw:700);	//set-font($fz, $va, $lh:inheretic, $ff:'Roboto Slab')
-		margin-top: 28px;
-
-	}
-	&__expert, &__desc {
-		color: $gray-color;
-		@include set-font($fz:15px, $va:50, $lh:28px, $ff:'Open Sans');	//set-font($fz, $va, $lh:inheretic, $ff:'Roboto Slab')
-
-	}
-	&__expert {
-		margin-bottom: 33px;
-	}
-
-	&__desc {
-		max-width: 760px;
-		margin: 0 auto;
-	}
-
-	&-ava {
-		position: relative;
-		width: 150px;
-		height: 150px;
-		display: block;
-		margin: 0 auto 27px;
-
-	}
-	&-bq {
-		position: absolute;
-		display: block;
-		background-image: url(../../img/bq.png);
-		background-repeat: no-repeat;
-		width: 48px;
-		height: 42px;
-		top: 0;
-		right: -16px;
-	}
-
-	&-thumb {
-		display: block;
-		margin: 0 auto ;
-		position: relative;
-		overflow: hidden;
-		width: 150px;
-		height: 150px;
-		border-radius: 100%;
-		img {
-			width: 150px;
-			height: 150px;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			object-fit: cover;
-		}
-
-	}
-}
-
-.slick-dots {
-	margin-top: 37px;
-	display: flex;
-	justify-content: center;
-	list-style-type: none;
-	&>li {
-		margin: 0 9px;
-		&>button {
-			text-indent: -9999px;
-			padding: 0;
-			line-height: 0;
-			font-size: 0;
-			cursor: pointer;
-			width: 8px;
-			height: 8px;
-			border: none;
-			background-color: $accent-color;
-			border-radius: 100%;
-			&:focus{
-				outline: none;
-			}
-	
-		}
-	}
-	&>li.slick-active {
-		&>button {
-			width: 37px;
-			border-radius: 4px;
-		}
-
-	}
-}
