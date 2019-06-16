@@ -54,6 +54,9 @@ body {
 	background-size: cover;		// чтобы растягивался по содержимому
 	color: $light-color;
 	padding-bottom: 157px;
+	@media (max-width: 320px) {
+		height: 1450px;
+	}
 }
 
 .header {
@@ -69,6 +72,9 @@ body {
 			margin-bottom: 25px;
 		}
 	}
+	@media (max-width: 920px) {
+		padding-bottom: 80px;
+	}
 	&__logo {
 		display: block;
 		width: 137px;
@@ -80,6 +86,9 @@ body {
 		display: flex;
 		justify-content: flex-end;
 		font-family: 'Open Sans', serif;
+		@media (max-width: 750px) {
+			flex-direction: column;
+		}
 		
 		&__item {
 			margin-left: 22px;
@@ -102,96 +111,38 @@ body {
 }
 
 // (GOOD BOOK) in main(1)
-.block-text {
-	flex-basis: calc(93% - 500px);
-	&--width {
-		flex-basis: calc(93% - 520px);
-		margin-top: -17px;
-	}
-	&__name {
-		@include set-font($fz:18px, $va:50, $ff:'Open Sans');
-		margin-bottom: 30px;
-	}
-	&__name_top {
-		margin-top: 16px;
-		margin-left: 0;
-		margin-bottom: 19px;
-		letter-spacing: calc(18px*40 / 1000);
-	}
-	&__title {
-			@include set-font($fz:48px, $va:40, $lh:44px, $fw:700);
-			margin-bottom: 40px;
-			span {
-				@include set-font($fz:18px, $va:50, $lh:44px);
-				display: block;
-				color: $accent-color;
-				margin-top: 9px;
-			}
-	}
-
-	&__description {
-		margin-bottom: 24px;
-		@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');
-	}
-
-	&__btn {
-		display: block;
-		@include set-font($fz:18px, $va:40);
-		@include btn-gradient();
-		@include box-shadow(#58b988);
-		color: $light-color;
-		text-decoration: none;
-		max-width: 250px;
-		border-radius: 3px;
-		text-align: center;
-		margin-top: 48px;
-		margin-bottom: 19px;
-		padding: 14px 0;	
-	}
-	small {
-		@include set-font($fz:12px, $va:50, $lh:22px, $ff:'Open Sans');
-		font-style: italic;
-	}
-	&-item {
-		margin-bottom: 55px;
-		&__date {
-			@include set-font($fz:15px, $va:50, $lh:44px, $ff:'Open Sans');
-			margin-bottom: 4px;
-		}
-		&__title {
-			@include set-font($fz:18px, $va:50, $lh:44px);
-			margin-bottom: 16px;
-		}
-		&__desc {
-			@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');
-		}
-		&__btn {
-			display: block;
-			@include set-font($fz:18px, $va:40);	//set-font($fz, $va, $lh, $ff:'Roboto Slab')
-			@include btn-gradient();
-			@include box-shadow(#58b988);
-			color: $light-color;
-			text-decoration: none;
-			max-width: 137px;
-			border-radius: 3px;
-			text-align: center;
-			margin-top: 28px;
-			padding: 14px 0;
-		}
-	}
-}
-
 .block-book {
 	display: flex;
 	justify-content: space-between;
+	@media (max-width: 920px) {
+		flex-direction: column-reverse;
+	}
 	&-demo {
 		display: block;
 		width: 446px;
 		height: 643px;
 		background-image: url(../../img/book.svg);
 		background-repeat: no-repeat;
-		flex-basis: 446px;
 		position: relative;
+		@media (max-width: 920px) {
+			margin: 50px auto 0;
+		}
+		@media (max-width: 500px) {
+			transform: scale(0.8);
+			margin-top: -20px;
+		}
+
+		@media (max-width: 440px) {
+			transform: scale(0.7);
+			margin-left: calc((100% - 440px)/2);
+			margin-top: -20px;
+		}
+
+		@media (max-width: 320px) {
+			transform: scale(0.6);
+			margin-left: calc((100% - 450px)/2);
+			margin-top: -120px;
+		}
 
 		h2 {
 			@include set-font($fz:36px, $va:40, $fw:700);
@@ -218,15 +169,131 @@ body {
 		}
 	}
 }
+.block-text {
+	flex-basis: calc(93% - 500px);
+	&--width {
+		flex-basis: calc(93% - 520px);
+		margin-top: -17px;
+		@media (max-width: 920px) {
+			margin-top: 80px;
+		}
+	}
+	&__name {
+		@include set-font($fz:18px, $va:50, $ff:'Open Sans');
+		margin-bottom: 30px;
+		@media (max-width: 920px) {
+			text-align: center;
+		}
+	}
+	&__name_top {
+		margin-top: 16px;
+		margin-left: 0;
+		margin-bottom: 19px;
+		letter-spacing: calc(18px*40 / 1000);
+	}
+	&__title {
+			@include set-font($fz:48px, $va:40, $lh:44px, $fw:700);
+			margin-bottom: 40px;
+			span {
+				@include set-font($fz:18px, $va:50, $lh:44px);
+				display: block;
+				color: $accent-color;
+				margin-top: 9px;
+				@media (max-width:1100px) {
+					line-height: 20px;
+				}
+				@media (max-width: 920px) {
+					margin-bottom: 30px;
+				}
+			}
+			@media (max-width: 920px) {
+				margin: 50px auto 0;
+				text-align: center;
+			}
+	
+	}
+
+	&__description {
+		margin-bottom: 24px;
+		@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');
+		@media (max-width: 920px) {
+			text-align: justify;
+		}
+	}
+
+	&__btn {
+		display: block;
+		@include set-font($fz:18px, $va:40);
+		@include btn-gradient();
+		@include box-shadow(#58b988);
+		color: $light-color;
+		text-decoration: none;
+		max-width: 250px;
+		border-radius: 3px;
+		text-align: center;
+		margin-top: 48px;
+		margin-bottom: 19px;
+		padding: 14px 0;
+		@media (max-width: 920px) {
+			margin: 40px auto 16px;
+		}	
+	}
+	small {
+		@include set-font($fz:12px, $va:50, $lh:22px, $ff:'Open Sans');
+		font-style: italic;
+		@media (max-width: 920px) {
+			display: block;
+			text-align: center;
+		}	
+	}
+	&-item {
+		margin-bottom: 55px;
+		@media (max-width: 920px) {
+			text-align: center;
+		}
+		&__date {
+			@include set-font($fz:15px, $va:50, $lh:44px, $ff:'Open Sans');
+			margin-bottom: 4px;
+		}
+		&__title {
+			@include set-font($fz:18px, $va:50, $lh:44px);
+			margin-bottom: 16px;
+		}
+		&__desc {
+			@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');
+		}
+		&__btn {
+			display: block;
+			@include set-font($fz:18px, $va:40);	//set-font($fz, $va, $lh, $ff:'Roboto Slab')
+			@include btn-gradient();
+			@include box-shadow(#58b988);
+			color: $light-color;
+			text-decoration: none;
+			max-width: 137px;
+			border-radius: 3px;
+			text-align: center;
+			margin-top: 28px;
+			padding: 14px 0;
+			@media (max-width: 920px) {
+				margin: 28px auto;
+			}
+		}
+	}
+}
 
 // any page
 .page {
 	padding-top: 161px;
 	padding-bottom: 157px;
-	@media (max-width:1020px) { // <=1020
+	@media (max-width:1020px) {
 		padding-top: 120px;
 		padding-bottom: 120px;
 	}
+	@media (max-width:320px) { 
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
 	position: relative;
 	&_gray {
 		background-color: $bg-light-color;
@@ -253,10 +320,25 @@ body {
 .block-author {
 	display: flex;
 	justify-content: space-between;
+	@media (max-width: 920px) {
+		flex-direction: column;
+	}
 }
 
 .block-ava {
 	position: relative;
+	@media (max-width: 520px) {
+		transform: scale(0.7);
+		margin-top: -15px;
+		margin-bottom: -130px;
+	}
+	@media (max-width: 320px) {
+		transform: scale(0.6);
+		margin-top: -55px;
+		margin-bottom: -175px;
+		margin-left: -100px;
+	}
+
 	&__svg {
 		position: absolute;
 		right: 0;
@@ -274,6 +356,9 @@ body {
 		margin-top: 49px;
 		margin-left: 51px;
 		margin-right: 0;
+	}
+	@media (max-width: 920px) {
+		margin: 50px auto 0;
 	}
 }
 
@@ -293,12 +378,20 @@ body {
 		@include set-font($fz:18px, $va:40, $lh:44px, $ff:'Open Sans');
 		display: block;
 		text-align: center;
+		@media (max-width: 520px) {
+			margin-bottom: 40px;
+		
+		}
 
 		span {
 			@include set-font($fz:80px, $va:40, $lh:44px, $fw:100);
 			display: block;
 			color: $accent-color;
 			margin-bottom: 32px;
+			@media (max-width: 520px) {
+				font-size: 60px;
+				margin-bottom: 10px;
+			}
 		}
 	}
 }
@@ -309,41 +402,29 @@ body {
 	justify-content: space-between;
 	padding-top: 73px;
 	@media (max-width:1020px) { // <= 1020
-		min-width: 750px;
-		margin: 73px auto 0;
-		flex-direction: column;
+		margin: 0 auto;
+		display: block;		
 	}
-	
 	&__about {
-
-		//flex-basis: 41%;
 		flex-basis: calc(100% - 690px);
 		@media (max-width:1020px) { // <= 1020
-			flex-basis: 100%;
+			text-align: justify;
+			padding: 0;
 		}
+
 		padding-right: 117px;
 		h3 {
-			font-size: 24px;
-			font-weight: 700;
-			letter-spacing: calc(24px*50 / 1000);
-			line-height: 1;
+			@include set-font($fz:24px, $va:50, $lh:24px, $fw:700);	
 			padding-bottom: 20px;
+			text-align: center;
 		}
 		p {
-			font-size: 15px;
-			font-family: 'Open Sans';
-			letter-spacing: calc(15px*50 / 1000);
-			line-height: 1.6;
-			
+			@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');	
 		}	
 		div {
 			padding-top: 28px;
 			p {
-				font-size: 18px;
-				font-family: 'Roboto Slab';
-				font-weight: 700;
-				letter-spacing: calc(18px*50 / 1000);
-				
+				@include set-font($fz:18px, $va:50, $lh:24px, $fw:700);
 				display: inline-block;
 			}
 			ul {
@@ -354,9 +435,8 @@ body {
 				li {
 					margin-left: 18px;
 					a {
+						@include set-font($fz:18px, $va:50, $lh:24px);
 						color: $accent-color;
-						font-size: 18px;
-						letter-spacing: calc(18px*50 / 1000);
 					}
 				}
 			}
@@ -368,15 +448,16 @@ body {
 		flex-basis: 585px;
 		@media (max-width:1020px) { // <= 1020
 			flex-basis: 100%;
-			margin-top: 40px;
+			margin-top: 60px;
 		}
 
 		h3 {
-			font-size: 24px;
-			font-weight: 700;
-			letter-spacing: calc(24px*50 / 1000);
+			@include set-font($fz:24px, $va:50, $lh:24px, $fw:700);
 			margin-bottom: 21px;
 			margin-left: -3px;
+			@media (max-width:1020px) {
+				text-align: center;
+			}
 		}
 	}
 	&__btn {
@@ -387,40 +468,46 @@ body {
 		max-width: 140px;
 		text-align: center;
 		padding: 16px 44px;
-		font-size: 18px;
 		border-radius: 3px;
 		margin-top: 26px;
+		@include set-font($fz:18px, $va:40);
+		@media (max-width:1020px) {
+				margin: 26px auto 0;
+
+		}
+
 		&:focus{
 			outline: none;
 		}
+
 	}
+
 	&__list {
+
+		@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');
 		margin: 0;
 		padding: 0;
 		counter-reset:list;
 		column-count: 2;
 		column-gap: 19px;
-		font-family: 'Open Sans';
-		font-size: 15px;
-		letter-spacing: calc(15px*50 / 1000);
+		@media (max-width: 700px) {
+			column-count: 1;
+			display: inline-block;
+			margin-left: calc((100% - 270px)/2);
+		}
 		&>li {
 			position: relative;
 			padding-left: 36px;
-			counter-increment:list;
-			list-style-type:none;
+			counter-increment: list;
+			list-style-type: none;
 			margin-bottom: 8px;
-			letter-spacing: 0.7px;
-			line-height: 24px;
 			&::before {
 				content: counter(list) ". ";
-				
 			}
 			&::after {
 				content: "+";
 				position: absolute;
-				font-family: 'Open Sans';
-				font-size: 15px;
-				line-height: 22px;
+				@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');
 				left: 0;
 				top: 1px;
 				background-color: $bg-list-color;
@@ -429,8 +516,7 @@ body {
 			}
 		}
 	}
-	&__list_next{
-		//border: 1px solid red;
+	&__list_next {
 		counter-reset:list 10;
 		position: relative;
 		margin-top: 20px;
@@ -452,12 +538,19 @@ body {
 		display: flex;
 		justify-content: space-around;
 		list-style-type: none;
+		@media(max-width:920px) {
+			flex-direction: column;
+		}
 		&__item {
 			background-image: url(../../img/book2.svg);
 			background-repeat: no-repeat;
 			width: 270px;
 			height: 410px;
 			position: relative;
+			@media(max-width:920px) {
+				margin: 0 auto 80px;
+			}
+	
 		}
 		&__title {
 			@include set-font($fz:24px, $va:40, $fw:700);	//set-font($fz, $va, $lh:inherit, $ff:'Roboto Slab', $fw:400)
@@ -481,11 +574,27 @@ body {
 			left: 70px;
 		}
 
+		&__btn {
+			display: none;
+			@media(max-width: 920px) {
+				display: block;
+				position: absolute;
+				bottom: -40px;
+				left: 33%;
+				@include set-font($fz:15px, $va:50, $lh:24px, $fw:700, $ff:'Open Sans');
+				color: $accent-color;
+				text-decoration: none;
+			}
+		}
+
 	}
 	.about-list {
 		display: flex;
 		justify-content: space-around;
 		list-style-type: none;
+		@media(max-width:920px) {
+			display: none;
+		}
 		&__item {
 			width: 316px;
 			.about {
@@ -629,20 +738,37 @@ body {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 74px;
-	@media (max-width:900px) { // <= 900
+	@media (max-width: 920px) { 
 		flex-direction: column;
 		min-width: 600px;
 		margin: 74px auto 0;
 	}
+	@media (max-width: 620px) { 
+		min-width: 500px;
+	}
+
+	@media (max-width: 530px) { 
+		min-width: 400px;
+	}
+
+	@media (max-width: 380px) { 
+		min-width: 300px;
+
+	}
+
 	&__item {
 		flex-basis: 32%;
-		@media (max-width:900px) { // <= 900
+		@media (max-width: 920px) { 
 			margin-bottom: 40px;
 		}
 	}
 	h4 {
 		@include set-font($fz:18px, $va:50, $lh:22px, $fw:700);	
 		margin-top: 16px;
+		@media (max-width: 320px) {
+			font-size: 16px;
+			text-align: center;
+		}
 	}
 	&-img {
 			width: 100%;
@@ -664,19 +790,18 @@ body {
 		@include set-font($fz:15px, $va:50, $lh:44px, $ff:'Open Sans');
 		display: flex;
 		flex-wrap: wrap;
+		@media (max-width: 320px) {
+			font-size: 14px;
+		}
 		a {
 			color: $accent-color;
-			text-decoration: none;
-			// @media (max-width:836px) { // <= 836
-			// 	line-height: 5px;
-			// 	margin-bottom: 20px;
-			// }
-	
+			text-decoration: none;	
 		}
 	}
 	&__desc {
 		@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');	
 	}
+
 	&__btn {
 		max-width: 266px;
 	}
@@ -686,16 +811,30 @@ body {
 .block-letter {
 	display: flex;
 	justify-content: space-between;
+	@media(max-width: 680px) {
+		flex-direction: column;
+	}
 	&-item {
 		flex-basis: 49%;
+		&:first-child {
+			margin-bottom: 40px;
+		}
 	}
 	&__title {
 		@include set-font($fz:48px, $va:40, $lh:44px, $fw:700);	
 		margin-bottom: 16px;
+		@media (max-width: 750px) {
+			font-size: 38px;
+		}
+		@media (max-width: 680px) {
+			text-align: center;
+		}
 	}
 	&__text {
 		@include set-font($fz:15px, $va:50, $lh:24px, $ff:'Open Sans');	
-
+		@media (max-width: 750px) {
+			text-align: justify;
+		}
 	}
 	&__input {
 		width: 100%;
@@ -746,6 +885,9 @@ body {
 	@include set-font($fz:15px, $va:40, $lh:24px, $ff:'Open Sans');	//set-font($fz, $va, $lh:inheretic, $ff:'Roboto Slab')
 	display: flex;
 	justify-content: space-between;
+	@media (max-width: 520px) {
+		flex-direction: column-reverse;
+	}
 	&>div {
 		&:nth-child(1) {
 			flex-basis: 32%;
@@ -757,10 +899,16 @@ body {
 		&:nth-child(3) {
 			flex-basis: 23%;
 			margin-top: 11px;
-
-
 		}
-
+		@media (max-width: 520px) {	
+			text-align: center;
+			&:nth-child(1) {
+				margin-top: 25px;
+			}
+			&:nth-child(2) {
+				margin-top: 25px;
+			}
+		}
 	}
 	&__logo {
 	
@@ -769,6 +917,10 @@ body {
 		height: 28px;
 		background-image: url(../../img/logo2.svg);
 		margin-bottom: 31px;
+		@media (max-width: 520px) {	
+			display: inline-block;
+			margin-top: 40px;
+		}
 		
 	}
 	&__copyright {
@@ -788,6 +940,12 @@ body {
 		}
 		&--right {
 			line-height: 20px;
+		}
+	}
+	&__wrap {
+		@media (max-width: 520px) {	
+			display: inline-block;
+			margin-bottom: 40px;
 		}
 	}
 	&__social {
@@ -827,50 +985,14 @@ body {
 	}
 }
 
-////////////////////////
-/*
-// Slider
-.block-carousel {
-	border: 1px solid green;
-	padding-bottom: 50px;	
+@media (max-width: 600px) {
+	h1.block-text__title {font-size: 36px;}
+	h2.block-text__title {font-size: 36px;}
+	.block-title > h2 {font-size: 36px;}
 }
-
-.slick-dots {
-	font-size: 22px;
+@media (max-width: 320px) {
+	h1.block-text__title {font-size: 26px;}
+	h2.block-text__title {font-size: 29px;}
+	.block-title > h2 {font-size: 29px; margin-top: 16px;}
+	.block-title span {font-size: 16px; line-height: 1.5;}
 }
-.slick-dots li button {
-	&:before {
-		font-family: 'slick';
-		font-size: 6px;
-		line-height: 20px;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 20px;
-		height: 20px;
-		content: '•';
-		text-align: center;
-		opacity: .25;
-		color: black;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		//---
-		font-size: 10px;
-		color: blue;
-		//background-color: greenyellow;
-	}
- 	&:hover {
-		&:before {
-			font-size: 16px;
-			color: red;
-		}
-	}
-
-}
-.slick-dots li.slick-active button {
-	&:before {
-		background-color: whitesmoke;
-		color: red;
-	}
-}
-*/

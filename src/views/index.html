@@ -98,19 +98,8 @@
 				</div>
 				<div class="block-content__index">
 					<h3>Table of contents</h3>
-					<ol class="block-content__list">
-						<li>Lorem ipsum dolor sit amet</li>
-						<li>Consectetur adipisicing elit</li>
-						<li>Labore et dolore magna</li>
-						<li>Consectetur adipisicing elit</li>
-						<li>Labore et dolore magna</li>		
-						<li>Lorem ipsum dolor sit amet</li>
-						<li>Consectetur adipisicing elit</li>
-						<li>Labore et dolore magna</li>
-						<li>Consectetur adipisicing elit</li>	
-						<li>Labore et dolore magna</li>	
-					</ol>
-					<ol id="nextContentsList" class="block-content__list block-content__list_next" style="display:none;">
+					<div class="block-content__wrap">					
+						<ol class="block-content__list">
 							<li>Lorem ipsum dolor sit amet</li>
 							<li>Consectetur adipisicing elit</li>
 							<li>Labore et dolore magna</li>
@@ -122,6 +111,19 @@
 							<li>Consectetur adipisicing elit</li>	
 							<li>Labore et dolore magna</li>	
 						</ol>
+						<ol id="nextContentsList" class="block-content__list block-content__list_next" style="display:none;">
+								<li>Lorem ipsum dolor sit amet</li>
+								<li>Consectetur adipisicing elit</li>
+								<li>Labore et dolore magna</li>
+								<li>Consectetur adipisicing elit</li>
+								<li>Labore et dolore magna</li>		
+								<li>Lorem ipsum dolor sit amet</li>
+								<li>Consectetur adipisicing elit</li>
+								<li>Labore et dolore magna</li>
+								<li>Consectetur adipisicing elit</li>	
+								<li>Labore et dolore magna</li>	
+						</ol>
+					</div>
 	
 					<button id="nextContents" class="block-content__btn">More</button>
 				</div>
@@ -143,17 +145,20 @@
 						<h3 class="book-list__title">Inception</h3>
 						<p class="book-list__subtitle">Books are the best friends</p>
 						<p class="book-list__author">- By Emma Anderson</p>
+						<a href="#" class="book-list__btn">READ MORE</a>
 					</li>
 
 					<li class="book-list__item">
 							<h3 class="book-list__title">Fight Club</h3>
 							<p class="book-list__subtitle">Books are the best friends</p>
 							<p class="book-list__author">- By Emma Anderson</p>
+							<a href="#" class="book-list__btn">READ MORE</a>
 					</li>
 					<li class="book-list__item">
 							<h3 class="book-list__title">Daredevils</h3>
 							<p class="book-list__subtitle">Books are the best friends</p>
 							<p class="book-list__author">- By Emma Anderson</p>
+							<a href="#" class="book-list__btn">READ MORE</a>
 					</li>
 				</ul>
 
@@ -170,8 +175,7 @@
 							<h4 class="about__title">Fight Club</h4>
 							<p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
 							<a href="#" class="about__btn">READ MORE</a>
-						</div>
-							
+						</div>						
 					</li>
 					<li class="about-list__item">
 						<div class="about">
@@ -200,7 +204,7 @@
 						</div>
 						<span class="block-carousel-bq"></span>
 					</div>
-					<h3>Kate Dennings</h3>
+					<h3>Kate Dennings-01</h3>
 					<p class="block-carousel__expert">Calligraphy Expert</p>
 					<p class="block-carousel__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
 				</div>
@@ -211,8 +215,8 @@
 						</div>
 						<span class="block-carousel-bq"></span>
 					</div>
-					<h3>Kate Dennings</h3>
-					<p class="block-carousel__expert">Calligraphy Expert</p>
+					<h3>Kate Dennings-02</h3>
+					<p class="block-carousel__expert">Vary good Expert</p>
 					<p class="block-carousel__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
 				</div>
 				<div>
@@ -222,8 +226,8 @@
 						</div>
 						<span class="block-carousel-bq"></span>
 					</div>
-				<h3>Kate Dennings</h3>
-					<p class="block-carousel__expert">Calligraphy Expert</p>
+				<h3>Kate Dennings-03</h3>
+					<p class="block-carousel__expert">Remarkable man</p>
 					<p class="block-carousel__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
 				</div>
 			</div>
@@ -345,20 +349,23 @@
 				</ul>
 			</div>
 			<div>
-					<h2 class="block-footer__title">Our Contacts</h2>
-					<ul class="block-footer__list block-footer__list--right ">
-						<li>Amphitheatre Parkway, CA, 94043</li>
-						<li>Call us on: +4455663322</li>
-						<li>Email: support@bukee.mail</li>
-					</ul>
-					<ul class="block-footer__social">
-						<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href=""><i class="fab fa-twitter"></i></a></li>
-						<li><a href=""><i class="fab fa-twitch"></i></a></li>
-						<li><a href=""><i class="fab fa-youtube"></i></a></li>
-						<li><a href=""><i class="fab fa-slack-hash"></i></a></li>
-						<li><a href=""><i class="fab fa-whatsapp"></i></a></li>
-					</ul>
+				<h2 class="block-footer__title">Our Contacts</h2>
+				<ul class="block-footer__list block-footer__list--right ">
+					<li>Amphitheatre Parkway, CA, 94043</li>
+					<li>Call us on: +4455663322</li>
+					<li>Email: support@bukee.mail</li>
+				</ul>
+				<div class="block-footer__wrap">
+						<ul class="block-footer__social">
+								<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href=""><i class="fab fa-twitter"></i></a></li>
+								<li><a href=""><i class="fab fa-twitch"></i></a></li>
+								<li><a href=""><i class="fab fa-youtube"></i></a></li>
+								<li><a href=""><i class="fab fa-slack-hash"></i></a></li>
+								<li><a href=""><i class="fab fa-whatsapp"></i></a></li>
+						</ul>		
+				</div>
+
 			</div>
 		</div>
 	</div>
