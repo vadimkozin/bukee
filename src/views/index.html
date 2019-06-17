@@ -14,21 +14,32 @@
 		<header>
 			<div class="header">
 				<a href="#" class="header__logo"></a>
-				<ul class="header-list">  
-					<li class="header-list__item active"><a class="header-list__link" href="">Home</a></li>
-					<li class="header-list__item"><a class="header-list__link" href="">About</a></li>
-					<li class="header-list__item"><a class="header-list__link" href="">Contents</a></li>
-					<li class="header-list__item"><a class="header-list__link" href="">Books</a></li>
-					<li class="header-list__item"><a class="header-list__link" href="">Education</a></li>
-					<li class="header-list__item"><a class="header-list__link" href="">Skills</a></li>
-					<li class="header-list__item"><a class="header-list__link" href="">Portfolio</a></li>
-					<li class="header-list__item"><a class="header-list__link" href="">Clients</a></li>
-					<li class="header-list__item"><a class="header-list__link" href="">Contact</a></li>
-				</ul>
+				<ul class="header-list"> 
+					<!--
+					<li class="header-list__item active"><a class="header-list__link" href="#home">Home</a></li>
+					<li class="header-list__item"><a class="header-list__link" href="#about">About</botton></li>
+					<li class="header-list__item"><a class="header-list__link" href="#contents">Contents</a></li>
+					<li class="header-list__item"><a class="header-list__link" href="#books">Books</a></li>
+					<li class="header-list__item"><a class="header-list__link" href="#education">Education</a></li>
+					<li class="header-list__item"><a class="header-list__link" href="#skills">Skills</a></li>
+					<li class="header-list__item"><a class="header-list__link" href="#portfolio">Portfolio</a></li>
+					<li class="header-list__item"><a class="header-list__link" href="#clients">Clients</a></li>
+					<li class="header-list__item"><a class="header-list__link" href="#contact">Contact</a></li>
+					-->
+					<li class="header-list__item active"><button id="go_home" class="header-list__link">Home</a></li>
+					<li class="header-list__item"><button id="go_about" class="header-list__link">About</botton></li>
+					<li class="header-list__item"><button id="go_contents" class="header-list__link">Contents</a></li>
+					<li class="header-list__item"><button id="go_books" class="header-list__link">Books</a></li>
+					<li class="header-list__item"><button id="go_education" class="header-list__link">Education</a></li>
+					<li class="header-list__item"><button id="go_skills" class="header-list__link">Skills</a></li>
+					<li class="header-list__item"><button id="go_portfolio" class="header-list__link">Portfolio</a></li>
+					<li class="header-list__item"><button id="go_clients" class="header-list__link">Clients</a></li>
+					<li class="header-list__item"><button id="go_contact" class="header-list__link">Contact</a></li>
+				</ul> 
 			</div>
 		</header>
 		<div class="wrap">
-				<div class="block-book">
+				<div id="home" class="block-book">
 					<div class="block-book-demo">
 						<h2>Good book <span>Don’t judge a book by its cover</span></h2>
 						<p>- By Emma Anderson</p>
@@ -46,7 +57,7 @@
 	</div>
 
 <!-- Emma Anderson (2) -->
-	<div class="page">   
+	<div id="about" class="page">   
 		<div class="wrap">
 			<div class="block-author">
 				<div class="block-text">
@@ -76,7 +87,7 @@
 	</div>
 
 <!-- Book Contents (3) -->
-	<div class="page page_gray">
+	<div id="contents" class="page page_gray">
 		<div class="wrap">
 	
 			<div class="block-title">
@@ -132,7 +143,7 @@
 	</div>
 
 <!-- Other Books (4) -->
-	<div class="page">
+	<div id="books" class="page">
 		<div class="wrap">
 			<div class="block-title">
 					<h2>Other Books <span>Some books you might be interested in</span></h2>
@@ -194,7 +205,7 @@
 	</div>
 
 <!-- Slider (5) -->
-	<div class="page page-carousel">
+	<div id="education" class="page page-carousel">
 		<div class="wrap">
 			<div class="block-carousel">
 				<div>
@@ -245,7 +256,7 @@
 	</div>
 
 <!-- Upcoming Events (6) -->
-	<div class="page">   
+	<div id="skills" class="page">   
 			<div class="wrap">
 				<div class="block-author">
 					<div class="block-ava">
@@ -279,7 +290,7 @@
 	</div>
 	
 <!-- Latest from Blog (7) -->
-	<div class="page page_gray">
+	<div id="portfolio" class="page page_gray">
 		<div class="wrap">
 			<div class="block-title">
 				<h2>Latest from Blog<span>Some of the latest posts from my personal blog</span></h2>
@@ -315,7 +326,7 @@
 	</div>
 
 <!-- Join Newsletter (8) -->
-<div class="page">
+<div id="clients" class="page">
 	<div class="wrap">
 		<div class="block-letter">
 			<div class="block-letter-item">
@@ -331,7 +342,7 @@
 </div>
 
 <!-- Footer (9) -->
-<div class="footer">
+<div id="contact" class="footer">
 	<div class="wrap">
 		<div class="block-footer">
 			<div>

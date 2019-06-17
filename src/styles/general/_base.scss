@@ -98,6 +98,13 @@ body {
 			&:hover {
 				border-bottom: 3px solid $accent-color;
 			}
+			&>button {
+				border: none;
+				background-color: inherit;
+				&:focus {
+					outline: none;
+				}
+			}
 		}
 		&__item.active {
 			border-bottom: 3px solid $accent-color;

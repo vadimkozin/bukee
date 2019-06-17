@@ -21,12 +21,30 @@
   });
 
   
-  const clickMore = () => {
+  const loadWindow = () => {
+
+    // botton 'More' for extend table
     document.getElementById('nextContents').addEventListener('click', (e) => {
       document.getElementById('nextContentsList').style.display="block";
       e.target.style.display="none";
     });
+
+    // smooth scrolling navigation
+    const navNames = ['home', 'about', 'contents', 'books', 'education', 'skills', 'portfolio', 'clients', 'contact'];
+    const navElements = document.querySelectorAll('.header-list__item');
+    navNames.forEach( v => {
+      var el = document.querySelector('#' + v);     // #about
+      var btn = document.querySelector('#go_' + v); // #go_about
+      if (el && btn) {
+        btn.addEventListener('click', () => { 
+          navElements.forEach( v => v.classList.remove('active'));
+          btn.parentElement.classList.add('active');
+          el.scrollIntoView({block: "nearest", behavior: "smooth"});
+        });
+      }
+
+    });
   }
-  window.addEventListener('load', clickMore, false);
+  window.addEventListener('load', loadWindow, false);
 
 </script>
