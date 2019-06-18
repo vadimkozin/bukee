@@ -3,8 +3,11 @@
 
 <script src="./js/main.js" defer></script>
 
-<script>
-  $(document).ready(()=>{
+<script> 
+
+  const onLoad = () => {
+
+    // slider
     $('.block-carousel').slick({
       dots: true,
       arrows: false,
@@ -13,15 +16,6 @@
       fade: true,
       cssEase: 'linear'
     });
-    
-    // $('#nextContents').click(() => {
-    //   $('#nextContentsList').show();
-    //   $('#nextContents').hide();
-    // });
-  });
-
-  
-  const loadWindow = () => {
 
     // botton 'More' for extend table
     document.getElementById('nextContents').addEventListener('click', (e) => {
@@ -45,6 +39,7 @@
 
     });
   }
-  window.addEventListener('load', loadWindow, false);
+
+  window.addEventListener('load', onLoad);
 
 </script>
